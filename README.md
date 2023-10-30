@@ -1,2 +1,2 @@
 # Justin Msaga Home Page
-portfolio page for Justin Msaga. A human exploring the intersection of technology, music, and food
+portfolio page for a human exploring the intersection of technology, music, and food
