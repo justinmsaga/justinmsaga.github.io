@@ -9,6 +9,7 @@ created using
 
 hosted on
 - [github pages](https://docs.github.com/en/pages)
+
 media files stored on
 - [ardrive](https://ardrive.io/)
 
