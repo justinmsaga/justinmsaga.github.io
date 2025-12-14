@@ -1,0 +1,205 @@
+@layer reset {
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Prevent font size inflation */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  /* Remove default margin in favour of better control in authored CSS */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* Set shorter line heights on headings and interactive elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  /* Balance text wrapping on headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* balance text wrap for blocks of text*/
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  /* Make sure textareas without a rows attribute are not tiny */
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target {
+    scroll-margin-block: 5ex;
+  }
+}
+@layer fonts {
+  @font-face {
+    font-family: headings;
+    src: url(./fonts/BodoniModaSC_9pt-Black.ttf);
+  }
+
+  @font-face {
+    font-family: body;
+    src: url(./fonts/UbuntuMono-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: side;
+    src: url(./fonts/PermanentMarker-Regular.ttf);
+  }
+}
+@layer base {
+  :root {
+    --pinkSpace: #f5c1b3;
+    --yellowAir: #e5a946;
+    --brickFire: #b63d03;
+    --peachLove: #ffdbb6;
+    --orangeWater: #e3711d;
+    --greenEarth: #576122;
+
+    --underline: underline wavy var(--ego) 2px;
+
+    --testBorder: solid black 2px;
+    --linksBorder: solid var(--orangeWater) 2px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--peachLove);
+    color: var(--greenEarth);
+    font-family: body;
+    font-size: 2rem;
+    text-align: center;
+    margin-inline: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  main {
+    display: grid;
+    place-content: center;
+  }
+
+  h1,
+  h2 {
+    font-family: headings;
+    color: var(--brickFire);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      font-family: body;
+      color: var(--orangeWater);
+    }
+
+    li {
+      margin-inline: 1rem;
+      padding-inline: 0.2rem;
+      padding-block: 0.2rem;
+      border-radius: 5px;
+    }
+
+    li.currentPage {
+      background-color: var(--yellowAir);
+    }
+  }
+
+  a:hover {
+    font-size: 2.5rem;
+    background-color: var(--yellowAir);
+    border-radius: 10px;
+  }
+}
+
+@layer siteSpecific {
+  .sideNote {
+    font-family: side;
+  }
+
+  button {
+    border-radius: 10px;
+    border: solid var(--brickFire) 5px;
+    background-color: inherit;
+    color: var(--greenEarth);
+  }
+
+  svg {
+    border: solid var(--brickFire) 5px;
+    border-radius: 5px;
+  }
+}
