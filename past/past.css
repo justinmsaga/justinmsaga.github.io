@@ -1,0 +1,16 @@
+.pageNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: side;
+  color: inherit;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.5rem;
+}
