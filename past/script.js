@@ -5,10 +5,13 @@ import {
   createContainer,
   createElement,
 } from "../helper.js";
+import { updateDisplay } from "./display.js";
 
 //page navigation section
 const nav = document.querySelector(".pageNav");
 const display = document.querySelector(".display");
+
+const goDisplay = updateDisplay(display);
 
 //initialize buttons from crate
 const btns = crate.map((c) => {
@@ -32,6 +35,7 @@ function artifactSelectBtn(art) {
 
 //setup selected artifact section
 function selectedDisplay(art) {
+  goDisplay({ artifacts: art.artifacts, type: art.type });
   const innerText = [
     createElement("h2", art.title, []),
     createElement("p", art.year, []),
@@ -44,6 +48,9 @@ function selectedDisplay(art) {
 
 //update navigation section after artifact is selected
 function updateNav(selected) {
+  //TODO: media query for larger screens
+  //nav.classList.add("navActive");
+
   //display unselected artifact buttons
   const newBtns = crate.filter((c) => c.title != selected);
   const btnSection = newBtns.map((c) => {

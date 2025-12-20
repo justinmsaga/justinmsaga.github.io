@@ -3,6 +3,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  /*TODO: media query for larger screens*/
+  .navActive {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   h2 {
@@ -24,8 +30,9 @@
   .selectedSection {
     display: grid;
     place-content: space-evenly;
-    background: var(--pinkSpace);
+    background-color: var(--pinkSpace);
     border-radius: 5px;
+    grid-column: 2 / span 2;
 
     h2 {
       color: var(--brickFire);
@@ -38,4 +45,33 @@
 }
 
 @layer artifactDisplay {
+  .display {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    display: grid;
+    gap: 1rem;
+    align-content: center;
+    border-top: solid var(--brickFire) 5px;
+  }
+
+  .selectors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    place-content: center;
+  }
+
+  .selected {
+    background-color: var(--pinkSpace);
+  }
+
+  img,
+  video {
+    width: 70vw;
+    justify-self: center;
+  }
+
+  audio {
+    justify-self: center;
+  }
 }
