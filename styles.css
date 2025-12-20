@@ -128,6 +128,7 @@
 
     --testBorder: solid black 2px;
     --linksBorder: solid var(--orangeWater) 2px;
+    --hoverButton: solid var(--yellowAir) 5px;
   }
 
   * {
@@ -180,8 +181,7 @@
   }
 
   a:hover {
-    font-size: 2.5rem;
-    background-color: var(--yellowAir);
+    border: var(--hoverButton);
     border-radius: 10px;
   }
 }
