@@ -74,4 +74,11 @@
   audio {
     justify-self: center;
   }
+
+  .dev {
+    display: grid;
+    a {
+      font-size: inherit;
+    }
+  }
 }

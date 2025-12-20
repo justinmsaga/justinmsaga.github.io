@@ -209,24 +209,30 @@ const crate = [
     year: "2023 - present",
     description: "audio interface design",
     craft: "interface design",
-    artifacts: [
-      {
-        description: "",
-        source: "",
+    type: "dev",
+    artifacts: {
+      description: "study of web development with react",
+      links: {
+        figma:
+          "https://www.figma.com/design/zrY4j6iveVNi4tNcpfAWXk/Jukebox?node-id=0-1&p=f&t=XcinldM0Q4PXX20m-0",
+        github: "https://github.com/justinmsaga/audio_player",
       },
-    ],
+    },
   },
   {
     title: "rock paper scissors",
     year: "2024",
     description: " text based game development",
     craft: "software development",
-    artifacts: [
-      {
-        description: "",
-        source: "",
+    type: "dev",
+    artifacts: {
+      description: "rock paper scissors fire water",
+      links: {
+        figma:
+          "https://www.figma.com/design/aXTgWt9IgX1xqo5cKKBHH2/rock-paper-scissors?node-id=0-1&p=f&t=MX2Kk46ynjUQvqnj-0",
+        github: "https://github.com/justinmsaga/rock-paper-scissors",
       },
-    ],
+    },
   },
 ];
 

@@ -3,27 +3,14 @@ import {
   createBtn,
   createContainer,
   createElement,
+  createLink,
   createMedia,
 } from "../helper.js";
 
 let currentContent = "";
 let currentArea = "";
 
-//return buttons to select artifact item
-function createSelectors(selected) {
-  //create artifact buttons from the selected archive content
-  const selectors = currentContent.artifacts.map((art) => {
-    return createBtn(
-      art.title,
-      //if the artifact is the current one being shown highlight
-      [selected === art.title ? "selected" : null],
-      showArtifact,
-      art
-    );
-  });
-  return selectors;
-}
-
+//------------------------------------------------------------------
 //update display area with the selected artifact
 function showArtifact(art) {
   //update artifact selection buttons. highlighting the selected artifact
@@ -31,6 +18,8 @@ function showArtifact(art) {
 
   //description of the selected artifact
   const description = createElement("p", art.description, []);
+
+  console.log("art.links.figma");
 
   //selected artifact
   const artifact = createMedia(
@@ -59,7 +48,48 @@ function showArtifact(art) {
     true
   );
 }
+//------------------------------------------------------------------
+//return buttons to select artifact item
+function createSelectors(selected) {
+  //create artifact buttons from the selected archive content
+  const selectors =
+    currentContent.type != "dev"
+      ? currentContent.artifacts.map((art) => {
+          return createBtn(
+            art.title,
+            //if the artifact is the current one being shown highlight
+            [selected === art.title ? "selected" : null],
+            showArtifact,
+            art
+          );
+        })
+      : [
+          createContainer(
+            "section",
+            "",
+            ["dev"],
+            [
+              createElement("p", currentContent.artifacts.description, []),
+              createLink(
+                "user interface design (figma)",
+                currentContent.artifacts.links.figma,
+                [],
+                true
+              ),
+              createLink(
+                "source code (github)",
+                currentContent.artifacts.links.github,
+                [],
+                true
+              ),
+            ]
+          ),
+        ];
 
+  return selectors;
+}
+
+//------------------------------------------------------------------
 //return function to update display area based on selected archive item
 function updateDisplay(section) {
   //set the page display area
