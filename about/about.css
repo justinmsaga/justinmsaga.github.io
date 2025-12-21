@@ -9,8 +9,13 @@ article {
   margin-top: 3rem;
 }
 
-a {
+.bio {
   display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo {
+  margin: auto;
 }
 
 .links {
@@ -22,6 +27,7 @@ a {
   grid-template-columns: 1fr 1fr 1fr;
   padding-inline: 1rem;
   padding-bottom: 1rem;
+  gap: 1rem;
 
   h2 {
     grid-column: 1 / 4;
@@ -37,7 +43,4 @@ a {
 
 .side {
   text-align: right;
-}
-
-img {
 }
