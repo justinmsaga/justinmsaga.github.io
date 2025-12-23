@@ -179,10 +179,14 @@
       background-color: var(--yellowAir);
     }
   }
+  a {
+    transition: all 200ms linear;
+  }
 
   a:hover {
     border: var(--hoverButton);
     border-radius: 10px;
+    padding-block: 0.5rem;
   }
 }
 
