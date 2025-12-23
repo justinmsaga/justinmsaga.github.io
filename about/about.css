@@ -24,11 +24,25 @@ article {
   transition: all 0.5s linear;
 }
 
+.hand {
+  stroke-width: 10;
+  stroke: #000;
+}
+.fullHand {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in;
+}
+
 .logo:hover {
   .eyes {
-    fill: var(--greenEarth);
-    y: 70;
-    height: 20px;
+    y: 20;
+    height: 100px;
+  }
+
+  .fullHand {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -40,20 +54,23 @@ article {
   p {
     text-align: center;
   }
+
   .linkSection {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
+
   a:hover {
+    padding: 0;
     border: none;
     #icons,
     .linked,
     .ig {
-      border: var(--testBorder);
       fill: var(--orangeWater);
     }
   }
+
   .externalLogo {
     border: none;
   }
