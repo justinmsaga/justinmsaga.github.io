@@ -16,28 +16,46 @@ article {
 
 .logo {
   margin: auto;
+  width: 30vw;
+  height: 30vw;
+}
+
+.eyes {
+  transition: all 0.5s linear;
+}
+
+.logo:hover {
+  .eyes {
+    fill: var(--greenEarth);
+    y: 70;
+    height: 20px;
+  }
 }
 
 .links {
   border: var(--linksBorder);
   border-radius: 10px;
   display: grid;
-  place-content: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-inline: 1rem;
-  padding-bottom: 1rem;
-  gap: 1rem;
 
-  h2 {
-    grid-column: 1 / 4;
-  }
   p {
     text-align: center;
   }
-  a {
-    display: grid;
-    place-content: center;
+  .linkSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  a:hover {
+    border: none;
+    #icons,
+    .linked,
+    .ig {
+      border: var(--testBorder);
+      fill: var(--orangeWater);
+    }
+  }
+  .externalLogo {
+    border: none;
   }
 }
 
