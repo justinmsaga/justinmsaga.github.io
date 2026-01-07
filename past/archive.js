@@ -1,7 +1,7 @@
 const crate = [
   {
     title: "playin with poly",
-    year: "2016 - present",
+    year: "2016",
     description:
       "using straight edged planes and colour to recreate the essentials of a scene",
     craft: "digital graffiti",
@@ -206,7 +206,7 @@ const crate = [
   },
   {
     title: "jukebox",
-    year: "2023 - present",
+    year: "2023",
     description: "audio interface design",
     craft: "interface design",
     type: "dev",

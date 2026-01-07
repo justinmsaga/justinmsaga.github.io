@@ -77,8 +77,5 @@
 
   .dev {
     display: grid;
-    a {
-      font-size: inherit;
-    }
   }
 }

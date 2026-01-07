@@ -19,8 +19,6 @@ function showArtifact(art) {
   //description of the selected artifact
   const description = createElement("p", art.description, []);
 
-  console.log("art.links.figma");
-
   //selected artifact
   const artifact = createMedia(
     currentContent.type,
@@ -48,6 +46,7 @@ function showArtifact(art) {
     true
   );
 }
+
 //------------------------------------------------------------------
 //return buttons to select artifact item
 function createSelectors(selected) {
