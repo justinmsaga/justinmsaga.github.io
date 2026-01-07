@@ -1,5 +1,4 @@
 body {
-  min-height: 50vw;
   display: grid;
   place-content: center;
 }
