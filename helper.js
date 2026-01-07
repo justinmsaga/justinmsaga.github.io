@@ -23,9 +23,12 @@ function createBtn(text, styles, handle, cmd, name) {
 }
 
 // create link
-function createLink(text, linkTo, styles, name) {
+function createLink(text, linkTo, styles, newPage, name) {
   const link = createElement("a", text, styles, name);
   link.setAttribute("href", linkTo);
+  if (newPage) {
+    link.setAttribute("target", "_blank");
+  }
 
   return link;
 }
