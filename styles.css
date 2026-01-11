@@ -188,6 +188,17 @@
     border-radius: 10px;
     padding-block: 0.5rem;
   }
+
+  button,
+  .button {
+    transition-property: transform, background-color;
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: translateX(5%);
+      background-color: var(--pinkSpace);
+    }
+  }
 }
 
 @layer siteSpecific {

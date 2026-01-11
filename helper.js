@@ -90,6 +90,7 @@ export {
   createLinkContainer,
   addChosen,
   setChosen,
+  createElemWithInner,
 };
 
 //-------------utility
@@ -110,4 +111,11 @@ function setChosen(selected, selectors) {
       : { ...s, chosen: false };
   });
   return chosenSelectors;
+}
+
+function createElemWithInner(type, inner, styles) {
+  const elem = createElement(type, "", styles);
+  elem.innerHTML = inner;
+
+  return elem;
 }
