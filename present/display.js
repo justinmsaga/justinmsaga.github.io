@@ -1,18 +1,68 @@
 import {
   addToTag,
-  createBtn,
   createContainer,
   createElement,
+  createElemWithInner,
   createLink,
-  createMedia,
 } from "../helper.js";
 
 let currentContent = "";
 let currentArea = "";
 
 //------------------------------------------------------------------
+
+function playlistDetails(play) {
+  const playlistSection = createContainer(
+    "section",
+    "",
+    ["playlist"],
+    [
+      createElemWithInner("p", `${play.title}: ${play.description}`, []),
+      createContainer(
+        "section",
+        "",
+        ["playLinks"],
+        [
+          createLink("spotify", play.source.spotify, [], true),
+          createLink("tidal", play.source.tidal, [], true),
+        ]
+      ),
+    ]
+  );
+
+  return playlistSection;
+}
+
 //update display area with the selected artifact
-function showPost(art) {}
+function showPost() {
+  const zineSections = currentContent.content.zine.map((z) => {
+    return createContainer(
+      "details",
+      "",
+      ["zineSection"],
+      currentContent.title === "sketchpad"
+        ? [
+            createElemWithInner(
+              "summary",
+              `<span class="sectionTitle">${z.title}</span> - ${z.craft}`,
+              []
+            ),
+            createElement("p", z.description, []),
+          ]
+        : currentContent.title === "playlist"
+        ? [
+            createElemWithInner(
+              "summary",
+              `<span class="sectionTitle">${z.title}</span> - ${z.description}`,
+              []
+            ),
+            playlistDetails(z.currently),
+          ]
+        : [createElement("p", "soon come", [])]
+    );
+  });
+  return zineSections;
+}
 
 //------------------------------------------------------------------
 //return buttons to select artifact post
@@ -20,7 +70,7 @@ function createBlogSection(selected) {
   return [
     createElement("h2", currentContent.title, []),
     createElement("p", currentContent.content.description, []),
-    createElement("p", "[coming soon]", []),
+    createContainer("section", "", ["zine"], showPost()),
   ];
 }
 
@@ -39,7 +89,7 @@ function updateDisplay(section) {
 
     //initialize artifact selection buttons
     addToTag(currentArea, [
-      createContainer("section", "", [], createBlogSection()),
+      createContainer("article", "", ["selectedZine"], createBlogSection()),
     ]);
   }
   return display;

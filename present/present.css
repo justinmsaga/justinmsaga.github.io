@@ -1,3 +1,6 @@
+:root {
+  --blogBorder: dashed var(--peachLove) 5px;
+}
 .pageNav {
   display: grid;
   place-content: center;
@@ -7,9 +10,39 @@
 
 .compact {
   grid-template-columns: 1fr 1fr;
-  padding-top: 2rem;
+  padding-block: 2rem;
 }
 
 h2 {
   font-family: side;
+}
+
+.selectedZine {
+  background-color: var(--pinkSpace);
+  border-radius: 10px;
+}
+
+.zine {
+  display: grid;
+  border-top: var(--blogBorder);
+}
+
+.zineSection {
+  text-align: left;
+  padding-inline: 1rem;
+  border-bottom: var(--blogBorder);
+}
+
+.sectionTitle {
+  text-decoration: underline;
+  color: var(--orangeWater);
+}
+
+.playlist {
+  text-align: center;
+}
+
+.playLinks {
+  display: flex;
+  justify-content: space-around;
 }
