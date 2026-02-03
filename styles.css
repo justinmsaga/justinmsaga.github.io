@@ -102,7 +102,8 @@
 @layer fonts {
   @font-face {
     font-family: headings;
-    src: url(./fonts/BodoniModaSC_9pt-Black.ttf);
+    /*src: url(./fonts/BodoniModaSC_9pt-Black.ttf);*/
+    src: url(./fonts/kode_mono.ttf);
   }
 
   @font-face {

@@ -13,7 +13,7 @@ article {
   dt {
     font-family: headings;
     color: var(--brickFire);
-    text-decoration: underline wavy;
+    text-decoration: underline solid;
   }
 
   dd {
